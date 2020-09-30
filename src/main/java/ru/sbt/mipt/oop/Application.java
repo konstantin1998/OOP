@@ -66,9 +66,6 @@ public class Application {
         }
     }
 
-    private static void sendCommand(SensorCommand command) {
-        System.out.println("Pretent we're sending command " + command);
-    }
 
     private static SensorEvent getNextSensorEvent() {
         // pretend like we're getting the events from physical world, but here we're going to just generate some random events
@@ -76,5 +73,8 @@ public class Application {
         SensorEventType sensorEventType = SensorEventType.values()[(int) (4 * Math.random())];
         String objectId = "" + ((int) (10 * Math.random()));
         return new SensorEvent(sensorEventType, objectId);
+    }
+    private static void sendCommand(SensorCommand command) {
+        System.out.println("Pretent we're sending command " + command);
     }
 }
